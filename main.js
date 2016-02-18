@@ -9,10 +9,10 @@ console.log("The average price is " + totalprice.price/items.length);
 //declare an array to contain all the titles of the items that costs between 14 and 18.
 var cheapones = [];
 
-//use a forEach to go through each object in the item array and add the items that cost between 14 and 18.
+//use a forEach to go through each object in the item array and add the objects that cost between 14 and 18.
 items.forEach(function(value, index,array){
-  if(array[index].price<18 && array[index].price>14){
-    cheapones.push(array[index].title)
+  if(array[index].price<=18 && array[index].price>=14){
+    cheapones.push(array[index])
   }
 });
 //log the array cheapones.
@@ -26,8 +26,7 @@ var answercur;
 // If it is, it defines the answercur as that item's title.
 items.forEach(function(value, index,array){
     if(array[index].currency_code=="GBP"){
-      console.log(array[index].title)
-      answercur= array[index].title;
+      answercur= array[index].title + " Costs: " + array[index].price;
     }
   })
 console.log(answercur)
